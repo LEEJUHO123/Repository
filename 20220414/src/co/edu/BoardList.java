@@ -8,7 +8,7 @@ public class BoardList {
 		
 	}
 	//배열에 한건 입력
-	public boolean addBoard(Board board) {
+	public int addBoard(Board board) {
 		// 더이상 저장공간 없을때.. false
 	//	boolean check = false;
 		int errorCase = -1; // 저장공간이 없음.
@@ -24,10 +24,11 @@ public class BoardList {
 			}
 		}
 		
-		return check;
+		return errorCase;
 	}
 	//수정 : 게시글 번호 찾아서 내용과 제목만 바꾸기
-	public void modifyBoard(Board board) {
+	public boolean modifyBoard(Board board) {
+		boolean check = false;
 		for(int i=0; i<boards.length; i++) {
 			if(boards[i].getBoardNo() == board.getBoardNo()) {
 				boards[i].setContent(board.getContent());
@@ -39,7 +40,8 @@ public class BoardList {
 		return check;
 	}
 		//삭제 : 게시글번호
-	public void removeBoard(int bNo) {
+	public boolean removeBoard(int bNo) {
+		boolean check = false;
 		for (int i = 0; i < boards.length; i++) {
 			if(boards[i].getBoardNo()==bNo) {
 				boards[i] = null; //배열의 위치 null 대입.
@@ -55,8 +57,8 @@ public class BoardList {
 		for(int i = 0; i < boards.length; i++) {
 			if(boards[i].getBoardNo() == bNo) {
 				int currentCnt = boards[i].getSearchCnt();
-				boards[i].setSearchCnt(i);
-				return boards[i];
+				boards[i].setSearchCnt(currentCnt + 1); //조회수 증가
+				return boards[i]; // 배열의 위치 null 대입
 			}
 		}
 		
@@ -65,7 +67,9 @@ public class BoardList {
 	
 	
 	
-	
+	// 게시글 목록
+		public Board[] boardList() {
+			return boards;
 	
 	
 				
@@ -76,14 +80,5 @@ public class BoardList {
 			}
 		}
 		
-	}
 
 
-	
-	// 게시글 목록
-	public Board[] boardList() {
-		return boards;
-	}
-}	
-	
-}

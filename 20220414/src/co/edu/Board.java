@@ -10,7 +10,6 @@ public class Board {
 	
 	//생성자
 	public Board(int boardNo, String title, String content, String writer) {
-		super();
 		this.boardNo = boardNo;
 		this.title = title;
 		this.content = content;

@@ -12,13 +12,14 @@ public class BoardExe {
 		boardList.init(5); //배열의 크기지정.
 		
 		while(true) {
-			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 9,종료");
+			System.out.println("1.추가 2.수정 3.목록 4.삭제 5.한건조회 6.작성자조회 9,종료");
 			System.out.print("선택 >>>");
+			
 			int menu = scn.nextInt();
 			scn.nextLine();
 			if (menu ==1) {
 				System.out.print("글번호 입력>>");
-				int bNo = scn.nextInt();
+				int bNo = Integer.parseInt(scn.nextLine());
 				System.out.println("제목 입력>>>");
 				String bTitle = scn.nextLine();
 				System.out.println("내용 입력>>>");
@@ -26,7 +27,6 @@ public class BoardExe {
 				System.out.println("작성자 입력>>>");
 				String bWriter = scn.nextLine();
 				Board newBod = new Board(bNo, bTitle, bContent, bWriter);
-				boardList.addBoard(newBod);
 				int chk = boardList.addBoard(newBod);
 				if (chk == 0) {
 					System.out.println("정상입력임");
@@ -53,7 +53,7 @@ public class BoardExe {
 					System.out.println("변경못했습니다.");
 				}
 				
-				boardList.modifyBoard(cBoard);
+				
 				
 			}else if (menu == 3) {
 				Board[] boards = boardList.boardList();
@@ -62,9 +62,12 @@ public class BoardExe {
 				for(Board board : boards) {
 					if(board != null) {
 						board.getInfo();
+					}
+				}
 					}else if(menu ==4) {
 						System.out.println("삭제할 글 번호>>>");
 						int bNo = Integer.parseInt(scn.nextLine());
+						
 						
 						if(boardList.removeBoard(bNo)) {
 							System.out.println("삭제가 되었습니다.");
@@ -82,18 +85,28 @@ public class BoardExe {
 							System.out.println("조회결과가 없습니다.");
 						}else {
 						getBoard.getDetailInfo();
-					}
-				}
+					
+						}
+				
 			} else if (menu == 9) {
 			System.out.println("프로글매을 종료합ㄴ디ㅏ.");	
 			break;
 			
-			
-			
-			
-		}else {
-		System.out.println("end of prog");
+			}else {
+				System.out.println("정확한 메뉴를 선택하세요.");
+			}
 		}
+		
+		System.out.println("end of prog");
 	}
 }
-}
+			
+			
+			
+		
+	
+		
+	
+
+
+		
