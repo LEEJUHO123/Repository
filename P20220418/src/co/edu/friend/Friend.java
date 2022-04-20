@@ -5,21 +5,38 @@ package co.edu.friend;
 public class Friend {
 	private String name;
 	private String phone;
+	private Gender gender; //MEN, WOMEN
+	
 	
 	
 	//생성자
-	Friend(){
-		
+	public Friend() {
+		// TODO Auto-generated constructor stub
 	}
 		
+		
+	
+	
 	
 	public Friend(String name, String phone) {
 		super();
 		this.name = name;
 		this.phone = phone;
+		
 	}
 
 	
+	public Friend(String name, String phone, Gender gender) {
+		super(); 
+		this.name = name;
+		this.phone = phone;
+		this.gender = gender;
+	}
+
+
+
+
+
 	//메소드
 	public String getName() {
 		return name;
@@ -36,6 +53,22 @@ public class Friend {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+
+	public Gender getGender() {
+		return gender;
+	}
+
+
+
+
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+
+
 
 
 	@Override

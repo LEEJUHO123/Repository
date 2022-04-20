@@ -7,8 +7,9 @@ public class Game1 {
 	public static void main(String[] args) {
 //		System.out.println("[*] [*] [*] [*] [*]");
 //		System.out.println("[*] [*] [*] [*] [*]");
+		
 // 		5를 찾는다
-// 		5를 못찾으면 별은 지워짐.
+// 		배열1번, 배열2번 이렇게 때려찍어서 5를 못찾으면 그 자리에 별은 지워짐.
 // 		5를 끝까지 못찾으면 나머지 별들 다 보여짐.
 		int[] problem = new int [5];
 		for(int i = 0; i<5; i++) {
