@@ -10,9 +10,8 @@ public class Board  {
 	private String writer;
 	private String date;
 	
-	public Board(String title, String story, String writer) {
-		
-	}
+	
+	
 
 	
 	public Board(String num, String title, String story, String writer, String date) {
@@ -73,6 +72,14 @@ public class Board  {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Board [num=" + num + ", title=" + title + ", story=" + story + ", writer=" + writer + ", date=" + date
+				+ "]";
 	}
 	
 	

@@ -63,8 +63,8 @@ public class BoardApp implements BoardService {
 	public void findBoard (Board bo) {
 		for(int i=0; i<boards.size(); i++) {
 			
-				System.out.println(boards.get(i));
-				break;
+				System.out.println(boards.get(i).toString());
+				
 			
 		}
 	}
